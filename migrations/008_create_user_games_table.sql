@@ -2,8 +2,8 @@ CREATE TYPE user_game_status AS ENUM ('backlog', 'playing', 'played', 'dropped')
 
 CREATE TABLE user_games (
   id VARCHAR(36) PRIMARY KEY,
-  user_id VARCHAR(36) NOT NULL,
-  game_id VARCHAR(36) NOT NULL,
+  user_id VARCHAR(36) NOT NULL REFERENCES users (id),
+  game_id VARCHAR(36) NOT NULL REFERENCES games (id),
   status user_game_status NOT NULL,
   rating DECIMAL(2, 1),
   created_at TIMESTAMP DEFAULT NOW (),
