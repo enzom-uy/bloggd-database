@@ -16,4 +16,4 @@ CREATE TABLE user_activity (
   CONSTRAINT fk_user_activity_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
   CONSTRAINT fk_user_activity_game_id FOREIGN KEY (game_id) REFERENCES games (id) ON DELETE CASCADE,
   CONSTRAINT fk_user_activity_review_id FOREIGN KEY (review_id) REFERENCES reviews (id)
-)
+);
